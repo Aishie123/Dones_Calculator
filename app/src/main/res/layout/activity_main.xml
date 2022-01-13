@@ -11,16 +11,15 @@
         android:id="@+id/button"
         android:layout_width="67dp"
         android:layout_height="50dp"
-        android:layout_marginTop="48dp"
         android:backgroundTint="#FBFFE2"
         android:fontFamily="sans-serif-black"
         android:text="+"
         android:textColor="#FF9999"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/mod"
         app:layout_constraintEnd_toStartOf="@+id/button3"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/entry2" />
 
     <Button
         android:id="@+id/button3"
@@ -72,9 +71,9 @@
         android:text="First Variable"
         android:textColor="#FBFFE2"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintBottom_toTopOf="@+id/entry1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -82,16 +81,15 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
         android:autoSizeTextType="uniform"
         android:fontFamily="sans-serif-black"
         android:text="Second Variable"
         android:textColor="#FBFFE2"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/entry2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/entry1" />
 
     <EditText
         android:id="@+id/entry1"
@@ -105,8 +103,9 @@
         android:textColor="#FBFFE2"
         android:textSize="18sp"
         app:backgroundTint="#FBFFE2"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="TouchTargetSizeCheck" />
@@ -123,8 +122,9 @@
         android:textColor="#FBFFE2"
         android:textSize="18sp"
         app:backgroundTint="#FBFFE2"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2"
         tools:ignore="TouchTargetSizeCheck" />
@@ -139,28 +139,44 @@
         android:textColor="#FBFFE2"
         android:textSize="20sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/res"
         app:layout_constraintEnd_toStartOf="@+id/textView4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/mod" />
 
     <Button
         android:id="@+id/res"
         android:layout_width="121dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="4dp"
         android:autoSizeTextType="uniform"
         android:backgroundTint="#FBFFE2"
         android:fontFamily="sans-serif-black"
         android:text="restart"
         android:textColor="#FF9999"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="@+id/textView5" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <Button
+        android:id="@+id/mod"
+        android:layout_width="204dp"
+        android:layout_height="49dp"
+        android:autoSizeTextType="uniform"
+        android:backgroundTint="#FBFFE2"
+        android:fontFamily="sans-serif-black"
+        android:text="%"
+        android:textColor="#FF9999"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toEndOf="@+id/button5"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <TextView
         android:id="@+id/textView4"
@@ -173,9 +189,14 @@
         android:textSize="20sp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView5"
         app:layout_constraintTop_toTopOf="@+id/textView5" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="textView,textView2,entry2,entry1" />
 
+</androidx.constraintlayout.widget.ConstraintLayout>

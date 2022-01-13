@@ -10,11 +10,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-Button plus, minus, mul, div, res;
-EditText var1, var2;
-TextView ther, ansbox;
-String result, TAG;
-float int1, int2, answer;
+    Button plus, minus, mul, div, mod, res;
+    EditText var1, var2;
+    TextView ther, ansbox;
+    String result, TAG;
+    double no1, no2, answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,7 @@ float int1, int2, answer;
         minus = (Button) findViewById(R.id.button3);
         mul = (Button) findViewById(R.id.button4);
         div = (Button) findViewById(R.id.button5);
+        mod = (Button) findViewById(R.id.mod);
 
         res = (Button) findViewById(R.id.res);
 
@@ -44,54 +45,64 @@ float int1, int2, answer;
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int1 = Float.parseFloat(var1.getText().toString());
-                int2 = Float.parseFloat(var2.getText().toString());
                 Log.d(TAG,"addition");
-                answer = int1 + int2;
-                result = String.valueOf(answer);
-                ther.setVisibility(View.VISIBLE);
-                ansbox.setVisibility(View.VISIBLE);
-                ansbox.setText(result);
+                no1 = Double.parseDouble(var1.getText().toString());
+                no2 = Double.parseDouble(var2.getText().toString());
+                answer = no1 + no2;
+                result();
             }
         });
         minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int1 = Float.parseFloat(var1.getText().toString());
-                int2 = Float.parseFloat(var2.getText().toString());
-                answer = int1 - int2;
-                result = String.valueOf(answer);
-                ther.setVisibility(View.VISIBLE);
-                ansbox.setVisibility(View.VISIBLE);
-                ansbox.setText(result);
+                Log.d(TAG,"subtraction");
+                no1 = Double.parseDouble(var1.getText().toString());
+                no2 = Double.parseDouble(var2.getText().toString());
+                answer = no1 - no2;
+                result();
             }
         });
 
         mul.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int1 = Float.parseFloat(var1.getText().toString());
-                int2 = Float.parseFloat(var2.getText().toString());
-                answer = int1 * int2;
-                result = String.valueOf(answer);
-                ther.setVisibility(View.VISIBLE);
-                ansbox.setVisibility(View.VISIBLE);
-                ansbox.setText(result);
+                Log.d(TAG,"multiplication");
+                no1 = Double.parseDouble(var1.getText().toString());
+                no2 = Double.parseDouble(var2.getText().toString());
+                answer = no1 * no2;
+                result();
             }
         });
 
         div.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int1 = Float.parseFloat(var1.getText().toString());
-                int2 = Float.parseFloat(var2.getText().toString());
-                answer = int1 / int2;
-                result = String.valueOf(answer);
-                ther.setVisibility(View.VISIBLE);
-                ansbox.setVisibility(View.VISIBLE);
-                ansbox.setText(result);
+                Log.d(TAG,"division");
+                no1 = Double.parseDouble(var1.getText().toString());
+                no2 = Double.parseDouble(var2.getText().toString());
+                answer = no1 / no2;
+                result();
             }
         });
+
+        mod.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG,"get remainder");
+                no1 = Double.parseDouble(var1.getText().toString());
+                no2 = Double.parseDouble(var2.getText().toString());
+                answer = no1 % no2;
+                result();
+            }
+        });
+    }
+
+    public void result(){
+        double roundOff = (double) Math.round(answer * 1000000)/1000000;
+        result = String.valueOf(roundOff);
+        ther.setVisibility(View.VISIBLE);
+        ansbox.setVisibility(View.VISIBLE);
+        ansbox.setText(result);
     }
 
     public void repeat(){
@@ -106,6 +117,4 @@ float int1, int2, answer;
             }
         });
     }
-
-
 }
