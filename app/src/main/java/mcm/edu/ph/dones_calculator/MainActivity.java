@@ -26,19 +26,19 @@ public class MainActivity extends AppCompatActivity {
 
     public void operations(){
 
-        plus = (Button) findViewById(R.id.button);
-        minus = (Button) findViewById(R.id.button3);
-        mul = (Button) findViewById(R.id.button4);
-        div = (Button) findViewById(R.id.button5);
+        plus = (Button) findViewById(R.id.plus);
+        minus = (Button) findViewById(R.id.minus);
+        mul = (Button) findViewById(R.id.times);
+        div = (Button) findViewById(R.id.divide);
         mod = (Button) findViewById(R.id.mod);
 
         res = (Button) findViewById(R.id.res);
 
-        var1 = (EditText) findViewById(R.id.entry1);
-        var2 = (EditText) findViewById(R.id.entry2);
+        var1 = (EditText) findViewById(R.id.var1entry);
+        var2 = (EditText) findViewById(R.id.var2entry);
 
-        ther = (TextView) findViewById(R.id.textView5);
-        ansbox = (TextView) findViewById(R.id.textView4);
+        ther = (TextView) findViewById(R.id.result);
+        ansbox = (TextView) findViewById(R.id.answer);
 
         TAG = "calculator";
 
